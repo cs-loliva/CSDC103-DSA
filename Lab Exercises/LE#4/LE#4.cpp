@@ -79,18 +79,8 @@ class Stack {
 };
 
 int main() { //edits to be made here
-    Stack s;
     int x, y;
-
-    //mod of x & y return r use as conversion factor conversion from hex and other bases formula: from https://hexcalculator.org/decimal-to-hexadecimal/
-    while(x > 0) {
-        s.push(x % y)
-        x = x / y
-    };
-
-    while(s.isEmpty) {
-        int temp = s.pop(); //hold popped val as temp and work through values of input
-    };
+    const string key = "0123456789abcdefghijklmnopqrstuvwxyz"; // alternative to ai-generated code, uses lookup string to map out the output character!
 
     while (cin >> x >> y) {
         //when x is 0 print nothing .. and continue?
@@ -98,7 +88,30 @@ int main() { //edits to be made here
             cout << 0 << "\n";
             continue;
         }
-    };
+        
+    
+        Stack s;
+
+        //mod of x & y return r use as conversion factor conversion from hex and other bases formula: from https://hexcalculator.org/decimal-to-hexadecimal/
+        while(x > 0) {
+            s.push(x % y);
+            x = x / y;
+        }
+
+        while(!s.isEmpty()) {
+            cout << key[s.pop()];
+            /*int temp = s.pop(); //hold popped val as temp and work through values of input
+            if (d < 10) 
+                cout << temp;
+            else
+                cout << (char)('a' + (temp - 10)); /*gemini generated code, i further asked gemini how this works 
+                    and it returned to me a response about the hexatrigesimal system which i noticed coincides directly with the constraints of the y value 
+                    (mind blown at this point) so with the concept of the base-36 i opted for an alternative approach below 
+                    ^^^^^^^^ also added const string "key" below main as a lookup string!*/
+        
+        }
+        cout << "\n";
+    }
     
     return 0;
 }
