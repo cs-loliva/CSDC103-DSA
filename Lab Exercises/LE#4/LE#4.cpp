@@ -26,8 +26,12 @@ SAMPLE INPUT                                                    SAMPLE OUTPUT
 
 /*
 GEMINI: outputs are a mix of base-2, base-3, base-5, and hexadecimal values.
+conversion from hex  formula: from https://hexcalculator.org/decimal-to-hexadecimal/
+NEED/GOAL: int to char mapping. no longer needed!!
+
 
 working source code: 
+*/
 #include <iostream>
 using namespace std;
 
@@ -74,16 +78,29 @@ class Stack {
         }
 };
 
-int main() {
+int main() { //edits to be made here
     Stack s;
-    s.push(10);
-    s.push(20);
-    s.push(30);
-    
-    cout << s.pop() << endl;
-    cout << s.peek() << endl;
+    int x, y;
+
+    //mod of x & y return r use as conversion factor conversion from hex and other bases formula: from https://hexcalculator.org/decimal-to-hexadecimal/
+    while(x > 0) {
+        s.push(x % y)
+        x = x / y
+    };
+
+    while(s.isEmpty) {
+        int temp = s.pop(); //hold popped val as temp and work through values of input
+    };
+
+    while (cin >> x >> y) {
+        //when x is 0 print nothing .. and continue?
+        if (x == 0) {
+            cout << 0 << "\n";
+            continue;
+        }
+    };
     
     return 0;
 }
-*/
+
 
